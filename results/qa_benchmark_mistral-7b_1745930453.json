@@ -1,0 +1,69 @@
+{
+  "benchmark_name": "qa_benchmark",
+  "model_id": "mistral-7b",
+  "timestamp": "2025-04-29 12:40:42",
+  "tasks": [
+    {
+      "task_id": "qa_factual_1",
+      "type": "factual_knowledge",
+      "difficulty": "easy",
+      "prompt": "What is the capital of France?",
+      "response": " The capital of France is Paris.",
+      "success": true,
+      "duration": 0.25856900215148926,
+      "score": 0.8,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "qa_factual_2",
+      "type": "factual_knowledge",
+      "difficulty": "medium",
+      "prompt": "Who wrote 'Pride and Prejudice'?",
+      "response": " Jane Austen wrote 'Pride and Prejudice'. It was first published in 1813, anonymously. However, her name became associated with it when a friend and publisher revealed that she was the author shortly after its publication. 'Pride and Prejudice' is considered one of the greatest works of English literature and a cornerstone of Regency-era English fiction.",
+      "success": true,
+      "duration": 2.1227927207946777,
+      "score": 0.8,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "qa_commonsense_1",
+      "type": "common_sense",
+      "difficulty": "medium",
+      "prompt": "If I put a glass of water in a freezer, what will happen to it after several hours?",
+      "response": " After several hours, the water in the glass will freeze. The temperature inside a freezer is typically below 0 degrees Celsius (32 degrees Fahrenheit), which is the freezing point of water. As the water cools, its molecules begin to slow down and form a crystalline structure, resulting in ice. However, it's important to note that the glass itself will not freeze, as glass does not absorb water or conduct heat well, so it remains at room temperature compared to the freezing water inside.",
+      "success": true,
+      "duration": 2.8613319396972656,
+      "score": 0.5714285714285714,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "qa_contextual_1",
+      "type": "contextual_understanding",
+      "difficulty": "hard",
+      "prompt": "John went to the store to buy apples. The store was out of Granny Smith, so he bought Red Delicious instead. When he got home, he realized he forgot to buy sugar.\n\nQuestion: What type of apples did John buy?",
+      "response": " John bought Red Delicious apples.",
+      "success": true,
+      "duration": 0.2926640510559082,
+      "score": 0.8,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "qa_multiplechoice_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "prompt": "Which of the following is a noble gas?",
+      "response": "1. Helium (He)\n\n2. Neon (Ne)\n\n3. Argon (Ar)\n\n4. Krypton (Kr)\n\n5. Xenon (Xe)\n\n6. Radon (Rn)\n\nAll of the above are noble gases. Noble gases, also known as inert gases, are a group of six chemical elements at the far right of the periodic table: helium, neon, argon, krypton, xenon, and radon. They are colorless, odorless, tasteless, nonreactive, monatomic gases under standard conditions, with entirely or almost entirely filled electron configurations in their outer atomic shells; this gives them a stable electronic structure, making it unlikely for them to form compounds under normal conditions.",
+      "success": true,
+      "duration": 4.655769348144531,
+      "score": 0.8,
+      "max_score": 1.0
+    }
+  ],
+  "summary": {
+    "total_score": 3.7714285714285714,
+    "max_possible_score": 5.0,
+    "average_score": 0.7542857142857142,
+    "tasks_completed": 5,
+    "tasks_successful": 5
+  }
+}

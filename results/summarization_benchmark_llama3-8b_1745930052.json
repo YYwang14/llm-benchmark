@@ -1,0 +1,69 @@
+{
+  "benchmark_name": "summarization_benchmark",
+  "model_id": "llama3-8b",
+  "timestamp": "2025-04-29 12:33:46",
+  "tasks": [
+    {
+      "task_id": "text_summarization_1",
+      "type": "text_summarization",
+      "difficulty": "medium",
+      "prompt": "Summarize the following text in 2-3 sentences:\nArtificial intelligence (AI) is intelligence demonstrated by machines, as opposed to natural intelligence displayed by animals including humans. AI research has been defined as the field of study of intelligent agents, which refers to any system that perceives its environment and takes actions that maximize its chance of achieving its goals. The term 'artificial intelligence' had previously been used to describe machines that mimic and display human cognitive skills that are associated with the human mind, such as learning and problem-solving. This definition has since been rejected by major AI researchers who now describe AI in terms of rationality and acting rationally, which does not limit how intelligence can be articulated. AI applications include advanced web search engines, recommendation systems, voice assistants, and self-driving cars. As machines become increasingly capable, tasks considered to require 'intelligence' are often removed from the definition of AI, a phenomenon known as the AI effect.",
+      "response": "Here is a summary of the text in 2-3 sentences:\n\nArtificial intelligence (AI) refers to intelligence demonstrated by machines, rather than natural intelligence displayed by animals and humans. The field of study for AI involves creating intelligent agents that perceive their environment and take actions to achieve their goals. AI applications include advanced search engines, recommendation systems, voice assistants, and self-driving cars, with the definition of AI expanding as machines become more capable.",
+      "success": true,
+      "duration": 26.50815725326538,
+      "score": 0.5,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "agent_decision_1",
+      "type": "agent_decision_making",
+      "difficulty": "hard",
+      "prompt": "",
+      "response": "",
+      "success": true,
+      "duration": 0.03012871742248535,
+      "score": 0.5,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "multi_step_task_1",
+      "type": "multi_step_task",
+      "difficulty": "hard",
+      "prompt": "",
+      "response": "",
+      "success": true,
+      "duration": 0.02318716049194336,
+      "score": 0.5,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "information_extraction_1",
+      "type": "information_extraction",
+      "difficulty": "medium",
+      "prompt": "",
+      "response": "",
+      "success": true,
+      "duration": 0.04074239730834961,
+      "score": 0.5,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "ethical_reasoning_1",
+      "type": "ethical_reasoning",
+      "difficulty": "hard",
+      "prompt": "",
+      "response": "",
+      "success": true,
+      "duration": 0.02454066276550293,
+      "score": 0.5,
+      "max_score": 1.0
+    }
+  ],
+  "summary": {
+    "total_score": 2.5,
+    "max_possible_score": 5.0,
+    "average_score": 0.5,
+    "tasks_completed": 5,
+    "tasks_successful": 5
+  }
+}

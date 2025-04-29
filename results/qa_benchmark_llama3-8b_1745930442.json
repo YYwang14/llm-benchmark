@@ -1,0 +1,69 @@
+{
+  "benchmark_name": "qa_benchmark",
+  "model_id": "llama3-8b",
+  "timestamp": "2025-04-29 12:40:07",
+  "tasks": [
+    {
+      "task_id": "qa_factual_1",
+      "type": "factual_knowledge",
+      "difficulty": "easy",
+      "prompt": "What is the capital of France?",
+      "response": "The capital of France is Paris.",
+      "success": true,
+      "duration": 22.152348279953003,
+      "score": 0.8,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "qa_factual_2",
+      "type": "factual_knowledge",
+      "difficulty": "medium",
+      "prompt": "Who wrote 'Pride and Prejudice'?",
+      "response": "The author of the classic novel \"Pride and Prejudice\" is Jane Austen.",
+      "success": true,
+      "duration": 0.6715400218963623,
+      "score": 0.8,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "qa_commonsense_1",
+      "type": "common_sense",
+      "difficulty": "medium",
+      "prompt": "If I put a glass of water in a freezer, what will happen to it after several hours?",
+      "response": "A classic experiment!\n\nIf you place a glass of water in a freezer, several things will happen over time. Here's a step-by-step breakdown:\n\n**Initial stages (0-1 hour):**\n\n* The water temperature will start dropping quickly as it comes into contact with the cold air inside the freezer.\n* You might notice the surface of the water starting to freeze, forming a thin layer of ice.\n\n**As the hours pass (1-4 hours):**\n\n* The water will continue to cool and eventually reach its freezing point at 32\u00b0F (0\u00b0C).\n* As it freezes, the water molecules will start to arrange themselves into a crystalline structure, creating ice crystals.\n* The glass may start to feel slightly heavy due to the expanding ice.\n\n**After several hours (4-6 hours):**\n\n* The entire volume of the water should have frozen solid, forming a block of ice.\n* The glass might be covered in a layer of frost or ice, which can make it difficult to see inside.\n\n**Long-term effects (after 24 hours):**\n\n* If you leave the glass in the freezer for an extended period, the ice will continue to expand and contract as the temperature fluctuates. This can cause the glass to crack or shatter.\n* The ice might also become more porous or develop imperfections due to changes in humidity or temperature.\n\n**Important note:** Make sure to check on your experiment periodically to ensure that the glass doesn't break due to the expanding ice. If you're concerned about the safety of your freezer contents, it's always a good idea to monitor the situation and take steps to prevent damage.\n\nRemember to handle the frozen glass with care when removing it from the freezer, as it may be fragile or prone to cracking.",
+      "success": true,
+      "duration": 10.007114887237549,
+      "score": 0.7142857142857143,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "qa_contextual_1",
+      "type": "contextual_understanding",
+      "difficulty": "hard",
+      "prompt": "John went to the store to buy apples. The store was out of Granny Smith, so he bought Red Delicious instead. When he got home, he realized he forgot to buy sugar.\n\nQuestion: What type of apples did John buy?",
+      "response": "According to the story, John bought Red Delicious apples.",
+      "success": true,
+      "duration": 0.42732930183410645,
+      "score": 0.8,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "qa_multiplechoice_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "prompt": "Which of the following is a noble gas?",
+      "response": "The noble gases are:\n\n1. Helium (He)\n2. Neon (Ne)\n3. Argon (Ar)\n4. Krypton (Kr)\n5. Xenon (Xe)\n6. Radon (Rn)\n\nSo, any one of these six elements is a noble gas!",
+      "success": true,
+      "duration": 1.8171436786651611,
+      "score": 0.8,
+      "max_score": 1.0
+    }
+  ],
+  "summary": {
+    "total_score": 3.9142857142857146,
+    "max_possible_score": 5.0,
+    "average_score": 0.7828571428571429,
+    "tasks_completed": 5,
+    "tasks_successful": 5
+  }
+}

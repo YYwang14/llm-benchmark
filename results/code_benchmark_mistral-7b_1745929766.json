@@ -1,0 +1,58 @@
+{
+  "benchmark_name": "code_benchmark",
+  "model_id": "mistral-7b",
+  "timestamp": "2025-04-29 12:28:42",
+  "tasks": [
+    {
+      "task_id": "code_gen_1",
+      "type": "code_generation",
+      "difficulty": "easy",
+      "prompt": "Write a function that takes a list of integers and returns the sum of all even numbers in the list.",
+      "response": " Here is a Python function that does exactly that:\n\n```python\ndef sum_even(numbers):\n    total = 0\n    for number in numbers:\n        if number % 2 == 0:\n            total += number\n    return total\n```\n\nThis function iterates through the input list `numbers`, and for each number it checks whether the number is even by using the modulo operator (`%`). If a number is even, it adds that number to the `total`. Finally, the function returns the total sum of all even numbers in the list.\n\nYou can call this function with a list of integers like this:\n\n```python\nnumbers = [1, 2, 3, 4, 5, 6]\nresult = sum_even(numbers)\nprint(result)  # Output: 12\n```",
+      "success": true,
+      "duration": 22.597713947296143,
+      "score": 0.5,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "code_gen_2",
+      "type": "code_generation",
+      "difficulty": "medium",
+      "prompt": "Implement a function to check if a string is a palindrome (reads the same forwards and backwards), ignoring spaces, punctuation, and case.",
+      "response": " Here's an implementation in Python:\n\n```python\nimport re\n\ndef is_palindrome(s):\n    s = s.lower()\n    # Remove non-alphanumeric characters and spaces\n    s = re.sub('[^a-z0-9]', '', s)\n    # Reverse the string\n    s = s[::-1]\n    # Check if the original string is equal to the reversed one\n    return s == s[::-1]\n```\n\nThis function first removes any non-alphanumeric characters and spaces from the input string using a regular expression. Then it reverses the string, and checks if the original string is equal to its reverse. This function ignores case and treats all characters as alphanumeric.\n\nExample usage:\n```python\nprint(is_palindrome(\"A man, a plan, a canal: Panama\"))  # True\nprint(is_palindrome(\"racecar\"))                        # True\nprint(is_palindrome(\"hello world\"))                   # False\n```",
+      "success": true,
+      "duration": 5.781118869781494,
+      "score": 0.5,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "debug_1",
+      "type": "debugging",
+      "difficulty": "medium",
+      "prompt": "Debug the following code:\ndef fibonacci(n):\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    else:\n        sequence = [0, 1]\n        for i in range(2, n):\n            sequence.append(sequence[i-1] + sequence[i-2])\n        return sequence\n\nprint(fibonacci(8))\n\nIssue: The function is supposed to return the first n numbers in the Fibonacci sequence, but there's a logical error.",
+      "response": " The issue with your code is that it overwrites the old values in the sequence for each iteration of the loop, only keeping the most recent two values. This means that it will not correctly generate the Fibonacci sequence as each number is calculated using the previous two numbers in the sequence.\n\nHere's a corrected version of your code:\n\n```python\ndef fibonacci(n):\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    else:\n        sequence = [0, 1]\n        for _ in range(2, n):\n            next_number = sequence[-1] + sequence[-2]\n            sequence.append(next_number)\n        return sequence\n\nprint(fibonacci(8))\n```\n\nIn this corrected version, we create a new variable `next_number` to hold the result of adding the previous two numbers in the sequence, and then append that value to the end of our list. This ensures that all the correct values are kept as we iterate through the loop.",
+      "success": true,
+      "duration": 6.0191731452941895,
+      "score": 0.5,
+      "max_score": 1.0
+    },
+    {
+      "task_id": "code_explain_1",
+      "type": "code_explanation",
+      "difficulty": "hard",
+      "prompt": "Explain the following code:\ndef quicksort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quicksort(left) + middle + quicksort(right)",
+      "response": " This code defines a recursive function called `quicksort` which is an implementation of the QuickSort sorting algorithm. Here's how it works:\n\n1. The base case for the recursion is when the length of the array (`arr`) is less than or equal to 1. In this case, the function simply returns the array as it is already sorted.\n\n2. If the array is larger than 1, it selects a pivot. The pivot is the middle element of the array. This can be calculated by taking the index `len(arr) // 2`.\n\n3. Then, it creates three lists: `left`, `middle`, and `right`. These lists contain elements of the original array that are less than, equal to, and greater than the pivot respectively. This is done using list comprehensions.\n\n4. The function then recursively calls itself on the `left` and `right` arrays, sorting them.\n\n5. Finally, it concatenates the sorted `left`, `middle`, and `right` arrays together in that order (sorted left, middle, and right) and returns the result. This forms a new array which is the sorted version of the original array.\n\nThe QuickSort algorithm is an efficient sorting algorithm that works by selecting a pivot element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then recursively sorted. This algorithm has an average time complexity of O(n log n) which makes it efficient for large datasets. However, its worst case time complexity is O(n^2), which can occur when the pivot element is always chosen poorly (e.g., choosing the first or last element in the array).",
+      "success": true,
+      "duration": 9.807305574417114,
+      "score": 0.5,
+      "max_score": 1.0
+    }
+  ],
+  "summary": {
+    "total_score": 2.0,
+    "max_possible_score": 4.0,
+    "average_score": 0.5,
+    "tasks_completed": 4,
+    "tasks_successful": 4
+  }
+}
