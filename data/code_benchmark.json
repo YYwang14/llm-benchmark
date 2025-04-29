@@ -1,0 +1,93 @@
+{
+  "benchmark_info": {
+    "name": "Code Generation and Understanding Benchmark",
+    "description": "Evaluates model performance on code-related tasks including code generation, debugging, and code explanation.",
+    "version": "1.0",
+    "category": "Coding Models"
+  },
+  "tasks": [
+    {
+      "id": "code_gen_1",
+      "type": "code_generation",
+      "difficulty": "easy",
+      "language": "python",
+      "prompt": "Write a function that takes a list of integers and returns the sum of all even numbers in the list.",
+      "reference_solution": "def sum_even_numbers(numbers):\n    return sum(num for num in numbers if num % 2 == 0)",
+      "test_cases": [
+        {
+          "input": [1, 2, 3, 4, 5, 6],
+          "expected_output": 12
+        },
+        {
+          "input": [1, 3, 5, 7],
+          "expected_output": 0
+        }
+      ],
+      "evaluation_criteria": {
+        "functional_correctness": true,
+        "code_efficiency": true,
+        "code_readability": true
+      }
+    },
+    {
+      "id": "code_gen_2",
+      "type": "code_generation",
+      "difficulty": "medium",
+      "language": "python",
+      "prompt": "Implement a function to check if a string is a palindrome (reads the same forwards and backwards), ignoring spaces, punctuation, and case.",
+      "reference_solution": "def is_palindrome(text):\n    clean_text = ''.join(c.lower() for c in text if c.isalnum())\n    return clean_text == clean_text[::-1]",
+      "test_cases": [
+        {
+          "input": "A man, a plan, a canal: Panama",
+          "expected_output": true
+        },
+        {
+          "input": "race a car",
+          "expected_output": false
+        }
+      ],
+      "evaluation_criteria": {
+        "functional_correctness": true,
+        "code_efficiency": true,
+        "edge_case_handling": true
+      }
+    },
+    {
+      "id": "debug_1",
+      "type": "debugging",
+      "difficulty": "medium",
+      "language": "python",
+      "buggy_code": "def fibonacci(n):\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    else:\n        sequence = [0, 1]\n        for i in range(2, n):\n            sequence.append(sequence[i-1] + sequence[i-2])\n        return sequence\n\nprint(fibonacci(8))",
+      "issue_description": "The function is supposed to return the first n numbers in the Fibonacci sequence, but there's a logical error.",
+      "reference_solution": "def fibonacci(n):\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        sequence = [0, 1]\n        for i in range(2, n):\n            sequence.append(sequence[i-1] + sequence[i-2])\n        return sequence",
+      "evaluation_criteria": {
+        "bug_identification": true,
+        "correction_accuracy": true,
+        "explanation_quality": true
+      }
+    },
+    {
+      "id": "code_explain_1",
+      "type": "code_explanation",
+      "difficulty": "hard",
+      "language": "python",
+      "code_to_explain": "def quicksort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quicksort(left) + middle + quicksort(right)",
+      "reference_explanation": "This is an implementation of the quicksort algorithm in Python. It works by selecting a pivot element (in this case, the middle element of the array), and then partitioning the array into three parts: elements less than the pivot, elements equal to the pivot, and elements greater than the pivot. The function then recursively applies the same sorting process to the sub-arrays containing elements less than and greater than the pivot. The base case is when the array has 0 or 1 elements, which is already sorted. The algorithm combines the sorted sub-arrays with the middle elements to produce the final sorted array.",
+      "evaluation_criteria": {
+        "accuracy": true,
+        "completeness": true,
+        "clarity": true
+      }
+    }
+  ],
+  "scoring": {
+    "method": "weighted_average",
+    "weights": {
+      "functional_correctness": 0.6,
+      "code_efficiency": 0.2,
+      "code_readability": 0.1,
+      "explanation_quality": 0.1
+    },
+    "max_score_per_task": 1.0
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "benchmark_info": {
+    "name": "Reasoning and Problem-Solving Benchmark",
+    "description": "Evaluates model performance on logical reasoning, mathematical problem-solving, and analytical thinking tasks.",
+    "version": "1.0",
+    "category": "Reasoning Models"
+  },
+  "tasks": [
+    {
+      "id": "logic_puzzle_1",
+      "type": "logic_puzzle",
+      "difficulty": "medium",
+      "prompt": "Four friends (Alex, Blake, Casey, and Dana) are sitting in a row at a movie theater. Alex is not sitting next to Blake. Casey is sitting next to Dana. Blake is sitting at one of the ends. Who is sitting next to Blake?",
+      "reference_answer": "Casey",
+      "explanation": "If Blake is at one end, and Alex is not next to Blake, then either Casey or Dana must be next to Blake. Since Casey is sitting next to Dana, they must be in the middle two seats. So if Blake is at one end, and Alex can't be next to Blake, then Alex must be at the other end. This means the order is either Blake, Casey, Dana, Alex or Alex, Dana, Casey, Blake. In either case, Casey is next to Blake.",
+      "evaluation_criteria": {
+        "correct_answer": true,
+        "reasoning_quality": true
+      }
+    },
+    {
+      "id": "math_problem_1",
+      "type": "mathematical_reasoning",
+      "difficulty": "hard",
+      "prompt": "A store is having a sale where if you buy 2 items, you get the third at 50% off (applied to the cheapest item). If you buy 3 shirts priced at $20, $25, and $30, how much will you pay in total?",
+      "reference_answer": "$65",
+      "explanation": "The cheapest item is the $20 shirt, which gets a 50% discount. So you pay full price for the $25 and $30 shirts, and half price for the $20 shirt. This gives: $25 + $30 + ($20/2) = $25 + $30 + $10 = $65.",
+      "evaluation_criteria": {
+        "correct_answer": true,
+        "step_by_step_working": true
+      }
+    },
+    {
+      "id": "analytical_reasoning_1",
+      "type": "analytical_reasoning",
+      "difficulty": "hard",
+      "prompt": "In a small town, 85% of the residents have cats, 75% have dogs, and 5% have neither cats nor dogs. What percentage of the town's residents have both cats and dogs?",
+      "reference_answer": "65%",
+      "explanation": "Let's use the formula for union of sets: P(A ∪ B) = P(A) + P(B) - P(A ∩ B). We know that P(A ∪ B) = 1 - P(neither) = 1 - 0.05 = 0.95, where A is the set of people with cats and B is the set of people with dogs. So, 0.95 = 0.85 + 0.75 - P(A ∩ B). Solving for P(A ∩ B), we get P(A ∩ B) = 0.85 + 0.75 - 0.95 = 0.65, or 65%.",
+      "evaluation_criteria": {
+        "correct_answer": true,
+        "step_by_step_working": true
+      }
+    },
+    {
+      "id": "syllogistic_reasoning_1",
+      "type": "syllogistic_reasoning",
+      "difficulty": "medium",
+      "prompt": "All mammals are warm-blooded. All whales are mammals. What can you conclude?",
+      "reference_answer": "All whales are warm-blooded.",
+      "explanation": "This is a classic syllogism. If all mammals are warm-blooded (major premise) and all whales are mammals (minor premise), then it logically follows that all whales are warm-blooded (conclusion).",
+      "evaluation_criteria": {
+        "correct_conclusion": true,
+        "logical_validity": true
+      }
+    },
+    {
+      "id": "counterfactual_reasoning_1",
+      "type": "counterfactual_reasoning",
+      "difficulty": "hard",
+      "prompt": "If water were not a polar molecule, how would this affect its ability to dissolve salt?",
+      "reference_answer": "If water were not polar, it would be much less effective at dissolving salt (sodium chloride). The polarity of water molecules allows them to surround and separate the Na+ and Cl- ions in salt. Without this polarity, water would not be able to overcome the strong ionic bonds in salt, and salt would be much less soluble in water.",
+      "evaluation_criteria": {
+        "scientific_accuracy": true,
+        "causal_reasoning": true,
+        "completeness": true
+      }
+    }
+  ],
+  "scoring": {
+    "method": "weighted_average",
+    "weights": {
+      "correct_answer": 0.6,
+      "reasoning_quality": 0.4
+    },
+    "max_score_per_task": 1.0
+  }
+}

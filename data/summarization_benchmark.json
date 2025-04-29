@@ -1,0 +1,125 @@
+{
+  "benchmark_info": {
+    "name": "Summarization and Agent Interaction Benchmark",
+    "description": "Evaluates model performance on text summarization and agent-based decision-making tasks.",
+    "version": "1.0",
+    "category": "Agent-Based Models"
+  },
+  "tasks": [
+    {
+      "id": "text_summarization_1",
+      "type": "text_summarization",
+      "difficulty": "medium",
+      "text_to_summarize": "Artificial intelligence (AI) is intelligence demonstrated by machines, as opposed to natural intelligence displayed by animals including humans. AI research has been defined as the field of study of intelligent agents, which refers to any system that perceives its environment and takes actions that maximize its chance of achieving its goals. The term 'artificial intelligence' had previously been used to describe machines that mimic and display human cognitive skills that are associated with the human mind, such as learning and problem-solving. This definition has since been rejected by major AI researchers who now describe AI in terms of rationality and acting rationally, which does not limit how intelligence can be articulated. AI applications include advanced web search engines, recommendation systems, voice assistants, and self-driving cars. As machines become increasingly capable, tasks considered to require 'intelligence' are often removed from the definition of AI, a phenomenon known as the AI effect.",
+      "target_length": "2-3 sentences",
+      "reference_summary": "Artificial intelligence (AI) refers to intelligence demonstrated by machines, specifically systems that perceive their environment and take actions to achieve goals. While AI was initially defined as machines mimicking human cognitive abilities, modern researchers focus on rationality and rational actions, encompassing various applications from search engines to self-driving cars.",
+      "evaluation_criteria": {
+        "content_preservation": true,
+        "conciseness": true,
+        "coherence": true,
+        "factual_accuracy": true
+      }
+    },
+    {
+      "id": "agent_decision_1",
+      "type": "agent_decision_making",
+      "difficulty": "hard",
+      "scenario": "You are an AI assistant helping a user plan a birthday party for their 10-year-old child. The user has a budget of $300 and wants to invite 15 children. They need suggestions for a venue, activities, food, and decorations, while staying within budget.",
+      "constraints": [
+        "Must stay within $300 budget",
+        "Must accommodate 15 children",
+        "Must be appropriate for 10-year-olds",
+        "Must include venue, activities, food, and decorations"
+      ],
+      "reference_solution": "I recommend hosting the party at a local park (free-$50 for permit) which provides space for activities. For activities, organize outdoor games like relay races, treasure hunts, and frisbee ($25 for supplies). For food, serve pizza ($120 for 5 large pizzas), juice boxes ($20), and a birthday cake ($35). For decorations, use balloons, streamers, and a birthday banner ($50). Total estimated cost: $250-300, leaving some buffer for unexpected expenses.",
+      "evaluation_criteria": {
+        "constraint_satisfaction": true,
+        "creativity": true,
+        "practicality": true,
+        "completeness": true
+      }
+    },
+    {
+      "id": "multi_step_task_1",
+      "type": "multi_step_task",
+      "difficulty": "hard",
+      "scenario": "You are an AI assistant helping a user research and compare three different smartphone models before making a purchase decision. The user is interested in camera quality, battery life, and overall value for money.",
+      "expected_steps": [
+        "Ask for user preferences and budget constraints",
+        "Research appropriate smartphone models that match criteria",
+        "Compare the models on camera quality with specific technical details",
+        "Compare the models on battery life with specific metrics",
+        "Analyze value for money with price-to-feature ratios",
+        "Provide a recommendation with justification",
+        "Answer follow-up questions about the recommendation"
+      ],
+      "evaluation_criteria": {
+        "step_coverage": true,
+        "information_accuracy": true,
+        "reasoning_quality": true,
+        "adaptability": true
+      }
+    },
+    {
+      "id": "information_extraction_1",
+      "type": "information_extraction",
+      "difficulty": "medium",
+      "text": "Company XYZ reported quarterly earnings of $2.3 billion, up 15% from the same period last year. The company's CEO, Jane Smith, attributed the growth to strong performance in the Asian market, where revenue increased by 28%. However, European sales declined by 5% due to economic uncertainty in the region. The board approved a dividend of $0.75 per share, payable on June 15, 2025, to shareholders of record as of May 31, 2025. The company also announced a $500 million share repurchase program over the next 12 months.",
+      "questions": [
+        "What were the quarterly earnings?",
+        "How did Asian market performance compare to European sales?",
+        "When will the dividend be paid?",
+        "What is the size of the share repurchase program?"
+      ],
+      "reference_answers": [
+        "$2.3 billion, up 15% year-over-year",
+        "Asian market revenue increased by 28% while European sales declined by 5%",
+        "June 15, 2025",
+        "$500 million over the next 12 months"
+      ],
+      "evaluation_criteria": {
+        "accuracy": true,
+        "completeness": true,
+        "conciseness": true
+      }
+    },
+    {
+      "id": "ethical_reasoning_1",
+      "type": "ethical_reasoning",
+      "difficulty": "hard",
+      "scenario": "A self-driving car approaches a situation where it must either swerve off the road, potentially injuring its passenger, or continue straight ahead, potentially hitting a group of pedestrians who suddenly stepped into the road against the traffic signal. How should the AI controlling the car be programmed to respond in this situation?",
+      "evaluation_criteria": {
+        "ethical_framework": true,
+        "consideration_of_perspectives": true,
+        "practical_implementation": true,
+        "reasoning_quality": true
+      }
+    }
+  ],
+  "scoring": {
+    "method": "rubric",
+    "rubric_levels": [
+      {
+        "score": 0,
+        "description": "Fails to complete the task or provides completely incorrect response"
+      },
+      {
+        "score": 0.25,
+        "description": "Minimal performance, many errors or omissions"
+      },
+      {
+        "score": 0.5,
+        "description": "Partial success with some errors or omissions"
+      },
+      {
+        "score": 0.75,
+        "description": "Good performance with minor errors or omissions"
+      },
+      {
+        "score": 1.0,
+        "description": "Excellent performance, comprehensive and accurate"
+      }
+    ],
+    "max_score_per_task": 1.0
+  }
+}

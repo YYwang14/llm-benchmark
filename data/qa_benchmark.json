@@ -1,0 +1,72 @@
+{
+  "benchmark_info": {
+    "name": "Question Answering Benchmark",
+    "description": "Evaluates model performance on various question answering tasks, including factual knowledge, common sense reasoning, and contextual understanding.",
+    "version": "1.0",
+    "category": "Large Foundation Models"
+  },
+  "tasks": [
+    {
+      "id": "qa_factual_1",
+      "type": "factual_knowledge",
+      "difficulty": "easy",
+      "question": "What is the capital of France?",
+      "reference_answer": "Paris",
+      "evaluation_criteria": {
+        "exact_match": true,
+        "case_sensitive": false
+      }
+    },
+    {
+      "id": "qa_factual_2",
+      "type": "factual_knowledge",
+      "difficulty": "medium",
+      "question": "Who wrote 'Pride and Prejudice'?",
+      "reference_answer": "Jane Austen",
+      "evaluation_criteria": {
+        "exact_match": true,
+        "case_sensitive": false
+      }
+    },
+    {
+      "id": "qa_commonsense_1",
+      "type": "common_sense",
+      "difficulty": "medium",
+      "question": "If I put a glass of water in a freezer, what will happen to it after several hours?",
+      "reference_answer": "It will freeze and turn into ice.",
+      "evaluation_criteria": {
+        "exact_match": false,
+        "keywords": ["freeze", "ice", "solid"]
+      }
+    },
+    {
+      "id": "qa_contextual_1",
+      "type": "contextual_understanding",
+      "difficulty": "hard",
+      "context": "John went to the store to buy apples. The store was out of Granny Smith, so he bought Red Delicious instead. When he got home, he realized he forgot to buy sugar.",
+      "question": "What type of apples did John buy?",
+      "reference_answer": "Red Delicious",
+      "evaluation_criteria": {
+        "exact_match": true,
+        "case_sensitive": false
+      }
+    },
+    {
+      "id": "qa_multiplechoice_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "question": "Which of the following is a noble gas?",
+      "options": ["Hydrogen", "Oxygen", "Neon", "Carbon"],
+      "correct_option": 2,
+      "reference_answer": "Neon",
+      "evaluation_criteria": {
+        "exact_match": true,
+        "case_sensitive": false
+      }
+    }
+  ],
+  "scoring": {
+    "method": "accuracy",
+    "max_score_per_task": 1.0
+  }
+}
